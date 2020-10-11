@@ -12,6 +12,20 @@ app.use(express.json());
 //for css, js, and other public files
 app.use(express.static('public'));
 
+//connect HTML pages
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, "public/assets/index.html"));
+});
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, "public/notes.html"));
+});
+app.get('/api/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, "./db/db.json"));
+});
+app.get('/api/notes/:id', (req, res) => {
+    let savedNotesArray = JSON.parse(fs.readFileSync("./db/db/json"));
+});
+
 
 
 app.listen(PORT, () => {
