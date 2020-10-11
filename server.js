@@ -26,7 +26,18 @@ app.get('/api/notes/:id', (req, res) => {
     let savedNotesArray = JSON.parse(fs.readFileSync("./db/db/json"));
 });
 
+//posts to array, displays on page
+app.post('/api/notes', (req, res) => {
+    let savedNotesArray = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+    let newNotes = req.body;
+    let uniqueNoteId = (savedNotesArray.length).toString();
+    newNotes.id = uniqueNoteId;
+    savedNotesArray.push(newNotes);
 
+    fs.writeFileSync('./db/db.json', JSON.stringify(savedNotesArray));
+    console.log('Note saved', newNotes);
+    res.json(savedNotesArray);
+});
 
 app.listen(PORT, () => {
     console.log('API server now on port' + PORT);
