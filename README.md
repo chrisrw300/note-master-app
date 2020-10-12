@@ -1,9 +1,11 @@
 # Note Master
 This application is used to write notes that write to a .json file!
 
+Live links: 
+Heroku: https://note-master-app.herokuapp.com/
+GitHub: https://chrisrw300.github.io/note-master-app/
+
 ![image](https://user-images.githubusercontent.com/65309756/95695828-8adfa780-0bed-11eb-84d9-5922a31b0cd8.png)
-
-
 ![image](https://user-images.githubusercontent.com/65309756/95695786-6e436f80-0bed-11eb-8026-af349db0c7c9.png)
 
 The following is what I used to make the project: 
